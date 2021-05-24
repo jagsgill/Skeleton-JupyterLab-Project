@@ -1,0 +1,10 @@
+version: "2"
+
+services:
+  jupyter-notebook:
+    image: jupyter/minimal-notebook
+    ports:
+    - "8888:8888"
+    volumes:
+    - ./notebooks:/home/jovyan/notebooks
+    entrypoint: start.sh jupyter lab --LabApp.token='' # don't need authentication
